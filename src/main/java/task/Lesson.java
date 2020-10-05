@@ -1,6 +1,8 @@
 package task;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class Lesson {
     private int id, quantityHours;
     private String name, form, teacher;

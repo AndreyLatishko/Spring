@@ -1,10 +1,10 @@
 package task;
 
-
+import org.springframework.stereotype.Component;
 
 import java.sql.Date;
 
-
+@Component
 public class Exercise {
     private int id,idLesson;
     private String  topic, formOfOccupation;
