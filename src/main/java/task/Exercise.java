@@ -6,6 +6,7 @@ public class Exercise {
     private int id,idLesson;
     private String  topic, formOfOccupation;
     private Date dateOfTheLesson;
+    //commit
 
 
     public Exercise(int id, int idLesson, Date dateOfTheLesson, String topic, String formOfOccupation) {
