@@ -1,14 +1,14 @@
 package task;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
 import java.util.List;
 
-@Controller
+@RestController
 public class UniversityController {
     private UniversityDataManager universityDataManager;
 
@@ -19,13 +19,13 @@ public class UniversityController {
 
     @GetMapping(value = "/lesson")
     public List<Lesson> lesson() throws SQLException {
-        List<Lesson> allLesson = universityDataManager.getAllLesson();
-        return  universityDataManager.printAllLesson(allLesson);
+        List<Lesson> allLesson = universityDataManager.queryAllLesson();
+        return universityDataManager.getAllLesson(allLesson);
     }
 
     @GetMapping(value = "/exercise")
     public List<Exercise> exercise() throws SQLException {
-        List<Exercise> allExercise = universityDataManager.getAllExercise();
-        return universityDataManager.printAllExercise(allExercise);
+        List<Exercise> allExercise = universityDataManager.queryAllExercise();
+        return universityDataManager.getAllExercise(allExercise);
     }
 }
